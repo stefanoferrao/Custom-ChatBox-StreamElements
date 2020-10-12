@@ -1,0 +1,60 @@
+/* Desenvolvido por Wallyay, TV_GAZ, e Chat :D */
+// parametros default para serem usados nos eventos vindos da twitch
+let eventsLimit = 5,
+    userLocale = "en-US",
+    includeFollowers = true,
+    includeRedemptions = true,
+    includeHosts = true,
+    minHost = 0,
+    includeRaids = true,
+    minRaid = 0,
+    includeSubs = true,
+    includeTips = true,
+    minTip = 0,
+    includeCheers = true,
+    direction = "top",
+    textOrder = "nameFirst",
+    minCheer = 0;
+
+let userCurrency,
+    totalEvents = 0;
+
+// Esse evento é focado na customizacao de um chatbox custom para streamelements e twitch
+window.addEventListener('onEventReceived', function (obj) {
+    if (!obj.detail.event) {
+      return;
+    }
+  
+  	var mensagem, deQuem, badgeMensagem;
+  
+  	if(obj.detail.listener === 'message') {
+	  var evento = obj.detail.event;
+      mensagem = evento.renderedText;
+      deQuem = evento.data.nick;
+      var badges = evento.data.badges;
+      badgeMensagem = badges.length > 0 ? badges[0] : undefined;
+      
+      adicionaEvento(deQuem, mensagem, badgeMensagem);
+    }
+});
+
+
+function adicionaEvento(deQuem, mensagem, badge) {
+//  console.log(deQuem)
+//  console.log(mensagem)
+//  console.log(badge)
+  // aplica imagem "this is fine" caso usuario da twitch no chat nao tenha badges
+  const finalBadge = typeof badge === 'undefined' ? 
+        ''
+       : badge.url;
+	var element = `
+    <div class="evento-container">
+		<div class="linha-top">
+			<img src=${finalBadge} class="badge" />
+	        <div class="meta">${deQuem}</div>
+		</div>		
+        <div class="message">${mensagem}</div>
+    </div>`;
+  
+  $('#container').append(element);
+}
