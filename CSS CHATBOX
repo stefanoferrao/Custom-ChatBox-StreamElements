@@ -1,3 +1,5 @@
+/* Desenvolvido por Wallyay, TV_GAZ, e Chat :D */
+// parametros default para serem usados nos eventos vindos da twitch
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
 
 * {
