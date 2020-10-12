@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#log>div {
+    animation: fadeInUp .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+    -webkit-animation: fadeInUp .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+}
+
+.colon {
+    display: none;
+}
+
+body {
+    text-shadow: 0 0 1px #000, 0 0 2px #000;
+    background: {background_color};
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: {font_size};
+    line-height: 1.5em;
+    color: {text_color};
+}
+
+#container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0px 10px 10px;
+    width: 100%;
+}
+
+#container>div {
+    margin: 1em;
+}
+
+#container>div.deleted {
+    visibility: hidden;
+}
+
+#container .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    margin-bottom: -0.5em;
+    width: 5%;
+    height: 5%;
+    background-size: contain;
+}
+
+#container .emote img {
+
+    display: inline-block;
+    opacity: 0;
+    margin-top: 1rem;
+}
+
+#container .message {
+    vertical-align: top;
+    display: table-cell;
+    padding-bottom: 0.1em;
+}
+
+#container .meta {
+  display: table-cell;
+  padding-bottom: -2em;
+}
+
+#container .linha-top {
+    font-family: 'Roboto';    
+    height: 35%;
+    top: 2px;
+    position: relative;
+    color: #FFF;
+  	display: inline;
+    background: #32CD32;
+    border-radius: 0px 15px 15px 15px;
+    padding: 0.6em 0.6em 0.6em 0.6em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: clip;
+    left: 35px;
+
+}
+
+#container .message {
+    font-family: 'Roboto Slab';    
+    margin-left: 20px;
+    display: block;
+    color: #8DF97B;
+    line-height: 2em;
+    background-color: rgba(13,37,9,0.70);
+    padding: 0.6em 0.4em 0.4em 1em;
+    word-wrap: break-word;
+    width: 100%;
+    overflow: hidden;
+	border: 1px;
+    border-style: solid;
+    border-color: #32CD32;
+    border-radius: 9px 9px 9px 9px;
+}
+
+.container-evento {
+  display: flex;
+}
+
+.linha-top {
+ flex-direction: 'row';
+}
+
+#container .badge {
+    margin-right: 0.2em;
+    width: 20px;
+    display: inline;
+    vertical-align: middle;
+}
+
+#container .meta {
+  margin-top: 20px;
+}
+
+.name {
+    margin-left: 0.2em;
+}
