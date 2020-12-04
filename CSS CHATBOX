@@ -1,6 +1,16 @@
-/* Desenvolvido por Wallyay, TV_GAZ, e Chat :D */
-// parametros default para serem usados nos eventos vindos da twitch
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
+@keyframes animacao {
+	0% {
+      	transform: translateX(-2000px);
+		opacity: 0;
+  	}
+	65% {
+		opacity: 0;
+  	}
+	100% { transform: translateX(0px);
+		opacity: 1;
+  	}
+}
 
 * {
     box-sizing: border-box;
@@ -9,11 +19,6 @@
 html, body {
     height: 100%;
     overflow: hidden;
-}
-
-#log>div {
-    animation: fadeInUp .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
-    -webkit-animation: fadeInUp .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
 }
 
 .colon {
@@ -40,6 +45,7 @@ body {
 
 #container>div {
     margin: 1em;
+	animation: animacao 1s ease-in-out;
 }
 
 #container>div.deleted {
