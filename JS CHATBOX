@@ -43,9 +43,9 @@ function adicionaEvento(deQuem, mensagem, badge) {
 //  console.log(deQuem)
 //  console.log(mensagem)
 //  console.log(badge)
-  // aplica imagem "this is fine" caso usuario da twitch no chat nao tenha badges
+  // aplica imagem "☣️" caso usuario da twitch no chat nao tenha badges
   const finalBadge = typeof badge === 'undefined' ? 
-        ''
+        'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/biohazard-sign_2623.png'
        : badge.url;
 	var element = `
     <div class="evento-container">
